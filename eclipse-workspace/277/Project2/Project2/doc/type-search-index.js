@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"BobaDrink"},{"p":"<Unnamed>","l":"CashRegister"},{"p":"<Unnamed>","l":"CoffeeDrink"},{"p":"<Unnamed>","l":"cookies"},{"p":"<Unnamed>","l":"Coupon"},{"p":"<Unnamed>","l":"DessertItem"},{"p":"<Unnamed>","l":"DrinkItem"},{"p":"<Unnamed>","l":"Macaroon"},{"p":"<Unnamed>","l":"pastry"}]
