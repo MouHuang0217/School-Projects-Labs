@@ -19,6 +19,7 @@ public class Main
 		return true;
 		
 	}
+	//game logic
 	public static void playSolitaire(Deck myDeck) {
 		int sum = 0; //sum the counts 
 		int count = 0; //count the amount of prime piles

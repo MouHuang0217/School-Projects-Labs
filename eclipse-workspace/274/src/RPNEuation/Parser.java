@@ -29,7 +29,7 @@ public class Parser {
 		ArrayList<Object> queue = new ArrayList<Object>();
 		
 		Stack<String> symStack = new Stack<String> (); 	
-		
+		//RPN logic
 		for (String i : token) {
 			if (isNumber(i)) { //if its a number, goes straight to the queue
 				queue.add(Integer.parseInt(i)); //convert to integer
@@ -70,7 +70,7 @@ public class Parser {
 	}
 	public static int calcRPN (ArrayList<Object> queueList) {
 		Stack<Object> calcStack = new Stack<Object> (); 
-		
+		//pop a symbol out and then 2 more numbers and do arithmitic with them
 		System.out.print("\nCalculate:");
 		for (Object i : queueList) {
 			if (i instanceof Integer) {

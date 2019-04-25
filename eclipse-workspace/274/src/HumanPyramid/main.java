@@ -27,7 +27,7 @@ public class main {
 		System.out.print("Thank you for playing Human Pyramid. Don't let me down!");
 	
 	}
-	
+	//recursion
 	public static double getWeight(int row, int column) {
 		double sum = 0;
 		count ++;

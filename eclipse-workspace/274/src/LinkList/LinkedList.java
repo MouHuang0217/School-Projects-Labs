@@ -12,6 +12,7 @@ public class LinkedList {
 	{
 		head = null;
 	}
+	//print it a max row of 10 nodes a line
 	public void display()
 	{
 		Node cur = head;
@@ -27,6 +28,7 @@ public class LinkedList {
 			count+=1;
 		}
 	}
+	//average value of the numbers associated with the nodes
 	public int avg() {
 		Node cur = head;
 		int sum = 0;
@@ -37,7 +39,7 @@ public class LinkedList {
 		int answer = (int)( sum / size() );
 		return answer;
 	}
-	
+	//remove logic for nodes 
 	public int remove(int position) {
 		int count = 0;
 		Node prev = head;
@@ -55,7 +57,7 @@ public class LinkedList {
 		return -1;
 	}
 
-	
+	//find the number inside a linked list
 	public int find(int x) {
 		int position = 1; 
 		Node cur = head;
@@ -68,7 +70,7 @@ public class LinkedList {
 		}
 		return -1;
 	}
-				
+	//return the size
 	public int size()
 	{
 		int count = 0;
@@ -80,6 +82,7 @@ public class LinkedList {
 		}
 		return count;
 	}
+	//add a new number into the list
 	public int add(int x) {
 		Node prev = head;
 		Node cur = head;

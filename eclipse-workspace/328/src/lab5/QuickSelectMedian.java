@@ -21,7 +21,35 @@ public class QuickSelectMedian {
 			return quickSelect(arr,start,arrangedPiv-1,pos);
 		}
 	}
-
+	public static int quickSelectAbs(int[] arr, int start, int end,int pos) {
+		if(start == end && start == pos) { //makes sure theres elements still to be sorted
+			return arr[start];
+		}
+		int arrangedPiv = Abspartition(arr, start, end,pos);	
+		
+		if (arrangedPiv == pos) {
+			
+			return arr[arrangedPiv];
+		}
+		else if(arrangedPiv < pos) {
+			return quickSelectAbs(arr,arrangedPiv+1,end,pos);
+		}
+		else {
+			return quickSelectAbs(arr,start,arrangedPiv-1,pos);
+		}
+	}
+	private static int Abspartition(int[] array, int left, int right, int pos) {
+		int pivot = array[left];
+		int position = left;
+		for (int i = left + 1; i <= right; i++) {
+			if (Math.abs(array[i]) <= Math.abs(pivot)) {
+				position++;
+				swap(array, i, position);
+				}
+	}
+		swap(array, left, position);
+		return position;
+	}
 	public static void swap(int[] arr, int positionOne, int positionTwo) {
 		int temp = arr[positionOne];
 		arr[positionOne] = arr[positionTwo];
@@ -35,10 +63,11 @@ public class QuickSelectMedian {
 				position++;
 				swap(array, i, position);
 				}
-			}
+	}
 		swap(array, left, position);
 		return position;
-		}
+	}
+	
 	public static void newArray(int[]a) {
 		Random random = new Random();
 	    int n;
@@ -58,7 +87,7 @@ public class QuickSelectMedian {
 		int length = arr.length;
 		int[] newArr = new int[length];
 		for (int i=0;i<length;i++) {
-			newArr[i]=Math.abs(arr[i]-median);
+			newArr[i]=(arr[i]-median);
 		}
 		System.out.println("The difference array is :" );
 		printA(newArr);
@@ -87,10 +116,12 @@ public class QuickSelectMedian {
 		printA(diff);
 		
 		int closest[]=new int[k];
-		
-		for ( int i=0;i<k;i++) {
-			closest[i]=quickSelect(diff,0,diff.length-1,i) + median;
+		for ( int i=0;i<k+1;i++) {
+			if(i != 0) {
+				closest[i-1]= quickSelectAbs(diff,0,diff.length-1,i) + median;	
+			}
 		}
+		System.out.println("The closest numbers to median " + median + " is: " );
 		printA(closest);
 		
 		

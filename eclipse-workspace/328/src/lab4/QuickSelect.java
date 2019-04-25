@@ -72,10 +72,10 @@ public class QuickSelect {
 		
 		int pivPos = sort(a,start,end);
 		
-		if (pivPos == keyPos) {
+		if (pivPos + 1 == keyPos) {
 			return a[keyPos];
 		}
-		else if (keyPos < pivPos) {
+		else if (keyPos < pivPos + 1) {
 			return quickSelectSmall(a, start, pivPos - 1, keyPos);
 		} 
 		else {
@@ -84,21 +84,19 @@ public class QuickSelect {
 	}
 	
 	public static int quickSelectMax(int[] a, int start, int end, int key) {
-		if(start >= end || key == a.length) {
+		if(start >= end) {
 			return start;
 		}
 		int pivPos = sort(a,start,end);
 		
 		if (a.length-key == pivPos) {
-			quickSelectMax(a,pivPos+1,end,key);
-			quickSelectMax(a,start,pivPos-1, key);
 			return pivPos;
 		}
 		else if (a.length-key > pivPos) {  
-			return pivPos = quickSelectMax(a,pivPos+1,end,key);
+			return quickSelectMax(a,pivPos+1,end,key);
 		}
 		else { 
-			return pivPos = quickSelectMax(a,start,pivPos-1, key);
+			return quickSelectMax(a,start,pivPos-1, key);
 		}
 		
 	}

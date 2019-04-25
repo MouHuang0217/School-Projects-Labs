@@ -13,10 +13,11 @@ public class Stack<typeA>{
 		stackOne = new ArrayList<typeA>(); //a stack that is created from an ArrayList <type A>
 											//is a placeholder of what the ArrayList is composed of. 
 	}
+	//add an object into the stack
 	public void push(typeA object) {
 		stackOne.add(object); 
 	}
-	
+	//remove the last item out of the stack
 	public typeA pop() {
 		if (!stackOne.isEmpty()) {
 			return stackOne.remove(stackOne.size()-1);
@@ -29,7 +30,7 @@ public class Stack<typeA>{
 	public boolean isEmpty() {
 		return (stackOne.size() == 0);
 	}
-	
+	//peek at the last item of the card
 	public typeA peek() {
 		if (!stackOne.isEmpty()) {
 			return (stackOne.get(stackOne.size()-1));

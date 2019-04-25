@@ -14,6 +14,7 @@ public class Deck {
 		top = 0;
 
 		int count = 0;
+		//construct the deck
 		for (int s = 0; s < suits.length; s++) 
 			for (int r = 0; r < ranks.length; r++)
 			{
@@ -34,6 +35,7 @@ public class Deck {
 	{
 		System.out.println("");
 		int count = 0;
+		//print a list of 4 by 13 cards display
 		for (int i = 0; i < 52; i++ ) {
 			if (count == 13) {
 				count = 0;
@@ -47,6 +49,7 @@ public class Deck {
 	
 	public void shuffle ()
 	{		
+		//shuffle the deck 100 times to get it randomized
 		for (int i = 0; i < 100 ; i++) {
 			Random ran = new Random();
 			int x = ran.nextInt(52); //0-51 random
