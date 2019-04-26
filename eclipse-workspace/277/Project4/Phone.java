@@ -2,8 +2,8 @@
 public abstract class Phone implements Cloneable {
 	protected String phone;
 	
-	public Object makeCopy() {
-		System.out.println("A phone is being made");
+	@Override
+	public Object clone() {
 		Object clone = null;
 		try {
 			clone = super.clone();

@@ -8,10 +8,9 @@ public class client {
 		Samsung Samsung = new Samsung();
 		Hwawei Hwawei = new Hwawei();
 		
-		
-		iPhone clonediPhone = (iPhone) phonestore.getClone(iPhone);
-		Samsung clonedSamsung = (Samsung) phonestore.getClone(Samsung);
-		Hwawei clonedHwawei = (Hwawei) phonestore.getClone(Hwawei);
+		iPhone clonediPhone = (iPhone) phonestore.clone(iPhone);
+		Samsung clonedSamsung = (Samsung) phonestore.clone(Samsung);
+		Hwawei clonedHwawei = (Hwawei) phonestore.clone(Hwawei);
 		
 		System.out.println(iPhone);
 		System.out.println(clonediPhone);
@@ -21,6 +20,11 @@ public class client {
 		
 		System.out.println(Hwawei);
 		System.out.println(clonedHwawei);
+		
+		System.out.println(clonediPhone.getClass());
+		System.out.println(clonedSamsung.getClass());
+		System.out.println(clonedHwawei.getClass());
+
 	}
 
 }

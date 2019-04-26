@@ -1,6 +1,7 @@
 package lab5;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 public class QuickSelectMedian {
@@ -23,13 +24,13 @@ public class QuickSelectMedian {
 	}
 	public static int quickSelectAbs(int[] arr, int start, int end,int pos) {
 		if(start == end && start == pos) { //makes sure theres elements still to be sorted
-			return arr[start];
+			return start;
 		}
 		int arrangedPiv = Abspartition(arr, start, end,pos);	
 		
 		if (arrangedPiv == pos) {
 			
-			return arr[arrangedPiv];
+			return arrangedPiv;
 		}
 		else if(arrangedPiv < pos) {
 			return quickSelectAbs(arr,arrangedPiv+1,end,pos);
@@ -113,17 +114,21 @@ public class QuickSelectMedian {
 		System.out.println();
 		//calculate the difference from the median then swap the value of 0 to the end
 		int[] diff = saveDifference(arr,median);
-		printA(diff);
-		
-		int closest[]=new int[k];
-		for ( int i=0;i<k+1;i++) {
-			if(i != 0) {
-				closest[i-1]= quickSelectAbs(diff,0,diff.length-1,i) + median;	
-			}
-		}
+		int medianPos = quickSelectAbs(diff,0,diff.length-1,k);
 		System.out.println("The closest numbers to median " + median + " is: " );
-		printA(closest);
 		
+		for(int i = 1; i < medianPos +1; i++) {
+			int ans = diff[i] + median;
+			System.out.print(ans + " ");
+		}
+		/*int closest[]= new int[k];
+		for (int i=1;i<k+1;i++) {
+			closest[i-1] = quickSelectAbs(diff,0,diff.length-1,i) + median;	
+		}*/
+		//printA(closest);
+		Arrays.sort(arr);
+		System.out.println();
+		printA(arr);
 		
 	}
 

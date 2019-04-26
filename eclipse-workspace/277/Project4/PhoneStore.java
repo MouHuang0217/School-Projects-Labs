@@ -1,6 +1,6 @@
 
 class PhoneStore {
-	public Phone getClone(Phone phone) {
-		return (Phone) phone.makeCopy();
+	public Phone clone(Phone phone) {
+		return (Phone) phone.clone();
 	}
 }
