@@ -29,7 +29,6 @@ public class QuickSelectMedian {
 		int arrangedPiv = Abspartition(arr, start, end,pos);	
 		
 		if (arrangedPiv == pos) {
-			
 			return arrangedPiv;
 		}
 		else if(arrangedPiv < pos) {
