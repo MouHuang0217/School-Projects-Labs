@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class heapsort {
 	public static void build_MaxHeap(int[] a) {
 		int n = a.length;
-		for (int i = n / 2 -1 ; i >= 0; i--){
+		for (int i = n / 2 ; i >= 0; i--){
 	            maxHeapify(a,n,i);
 	       }
 		
@@ -42,7 +42,6 @@ public class heapsort {
 			int temp = a[0];
 			a[0] = a[i];
 			a[i] = temp;
-			
 			maxHeapify(a,i,0);
 		}
 		
